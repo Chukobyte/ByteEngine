@@ -1,5 +1,5 @@
 build:
-	g++ -w -std=c++14 -Wfatal-errors \
+	g++ -w -std=c++14 -Wfatal-errors -static-libgcc -static-libstdc++ \
 	./src/*.cpp ./src/core/*.cpp ./src/core/managers/*.cpp ./src/core/handlers/*.cpp ./src/core/components/*.cpp ./lib/json/* \
 	-o byte_engine.exe \
 	-I"${SDL2_HOME}\\include" \
