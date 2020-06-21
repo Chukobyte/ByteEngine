@@ -14,15 +14,15 @@ Dependencies:
 * Python 3.7
 
 1. Set environment variable `SDL2_HOME` to path containing SDL2 dependencies.
-2. Set environment variable `PYTHON37_HOME` to path containing Python 3.7 dependencies.
+2. Set environment variable `PYTHON_HOME` to path containing Python 3.7 dependencies.
 3. In project directory execute `make`.  Will compile a binary named `byte_engine.exe`.
 4. Run `byte_engine.exe` in project root directory containing `byte_config.json`.
 
 ### Examples
 
-#### Pacman Clone
+[Pacman Clone](https://github.com/Chukobyte/PacmanClone)
 
-![Pacman Clone](https://github.com/Chukobyte/ByteEngine/blob/master/assets/examples/pacman_example.gif)
+![Pacman Clone Example](https://github.com/Chukobyte/PacmanClone/blob/master/pacman_example.gif)
 
 
 ### Engine API

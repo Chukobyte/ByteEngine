@@ -4,8 +4,8 @@ build:
 	-o byte_engine.exe \
 	-I"${SDL2_HOME}\\include" \
 	-L"${SDL2_HOME}\\lib" \
-	-I"C:\\Users\\chuko\\AppData\\Local\\Programs\\Python\\Python37-32\\include" \
-	-L"C:\\Users\\chuko\\AppData\\Local\\Programs\\Python\\Python37-32\\libs" \
+	-I"${PYTHON_HOME}\\include" \
+	-L"${PYTHON_HOME}\\libs" \
 	-lmingw32 \
 	-lSDL2main \
 	-lSDL2_image \
