@@ -1,0 +1,151 @@
+{
+  "id": "TitleScreen",
+  "layer": 0,
+  "components": [
+    {
+      "type": "script_class",
+      "module": "sample_projects.pacman.scripts.title_screen",
+      "class": "TitleScreen"
+    }
+  ],
+  "entities": [
+    {
+      "id": "logo",
+      "layer": 1,
+      "is_clickable": false,
+      "components": [
+        {
+          "type": "transform",
+          "camera_focused": false,
+          "position": {
+            "x": 100,
+            "y": 150
+          },
+          "velocity": {
+            "x": 0,
+            "y": 0
+          },
+          "width": 128,
+          "height": 24,
+          "scale": 1,
+          "rotation": 0
+        },
+        {
+          "type": "sprite",
+          "texture_id": "pacman-logo",
+          "animated": true
+        }
+      ]
+    },
+    {
+      "id": "play_instruction",
+      "layer": 1,
+      "is_clickable": false,
+      "components": [
+        {
+          "type": "text_label",
+          "font_id": "pacman-pixel",
+          "text": "Press Space To Play",
+          "wrap_length": 600,
+          "position": {
+            "x": 75,
+            "y": 275
+          },
+          "color": {
+            "r": 255,
+            "g": 255,
+            "b": 255
+          }
+        }
+      ]
+    },
+    {
+      "id": "player_one_point_label",
+      "layer": 1,
+      "is_clickable": false,
+      "components": [
+        {
+          "type": "text_label",
+          "font_id": "pacman-pixel",
+          "text": "1UP",
+          "wrap_length": 600,
+          "position": {
+            "x": 50,
+            "y": 0
+          },
+          "color": {
+            "r": 255,
+            "g": 255,
+            "b": 255
+          }
+        }
+      ]
+    },
+    {
+      "id": "player_one_point_value_label",
+      "layer": 1,
+      "is_clickable": false,
+      "components": [
+        {
+          "type": "text_label",
+          "font_id": "pacman-pixel",
+          "text": "00",
+          "wrap_length": 600,
+          "position": {
+            "x": 50,
+            "y": 20
+          },
+          "color": {
+            "r": 255,
+            "g": 255,
+            "b": 255
+          }
+        }
+      ]
+    },
+    {
+      "id": "high_score_point_label",
+      "layer": 1,
+      "is_clickable": false,
+      "components": [
+        {
+          "type": "text_label",
+          "font_id": "pacman-pixel",
+          "text": "HIGH SCORE",
+          "wrap_length": 600,
+          "position": {
+            "x": 150,
+            "y": 0
+          },
+          "color": {
+            "r": 255,
+            "g": 255,
+            "b": 255
+          }
+        }
+      ]
+    },
+    {
+      "id": "high_score_point_value_label",
+      "layer": 1,
+      "is_clickable": false,
+      "components": [
+        {
+          "type": "text_label",
+          "font_id": "pacman-pixel",
+          "text": "00",
+          "wrap_length": 600,
+          "position": {
+            "x": 200,
+            "y": 20
+          },
+          "color": {
+            "r": 255,
+            "g": 255,
+            "b": 255
+          }
+        }
+      ]
+    }
+  ]
+}

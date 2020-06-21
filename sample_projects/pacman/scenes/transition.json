@@ -1,0 +1,12 @@
+{
+  "id": "Transition",
+  "layer": 0,
+  "components": [
+    {
+      "type": "script_class",
+      "module": "sample_projects.pacman.scripts.transition",
+      "class": "Transition"
+    }
+  ],
+  "entities": []
+}

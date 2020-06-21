@@ -1,0 +1,398 @@
+{
+  "id": "Main",
+  "layer": 0,
+  "components": [
+    {
+      "type": "script_class",
+      "module": "sample_projects.pacman.scripts.main",
+      "class": "Main"
+    }
+  ],
+  "entities": [
+    {
+      "id": "player_one_point_label",
+      "layer": 1,
+      "is_clickable": false,
+      "components": [
+        {
+          "type": "text_label",
+          "font_id": "pacman-pixel",
+          "text": "1UP",
+          "wrap_length": 600,
+          "position": {
+            "x": 50,
+            "y": 0
+          },
+          "color": {
+            "r": 255,
+            "g": 255,
+            "b": 255
+          }
+        }
+      ]
+    },
+    {
+      "id": "player_one_point_value_label",
+      "layer": 1,
+      "is_clickable": false,
+      "components": [
+        {
+          "type": "text_label",
+          "font_id": "pacman-pixel",
+          "text": "00",
+          "wrap_length": 600,
+          "position": {
+            "x": 50,
+            "y": 20
+          },
+          "color": {
+            "r": 255,
+            "g": 255,
+            "b": 255
+          }
+        }
+      ]
+    },
+    {
+      "id": "high_score_point_label",
+      "layer": 1,
+      "is_clickable": false,
+      "components": [
+        {
+          "type": "text_label",
+          "font_id": "pacman-pixel",
+          "text": "HIGH SCORE",
+          "wrap_length": 600,
+          "position": {
+            "x": 150,
+            "y": 0
+          },
+          "color": {
+            "r": 255,
+            "g": 255,
+            "b": 255
+          }
+        }
+      ]
+    },
+    {
+      "id": "high_score_point_value_label",
+      "layer": 1,
+      "is_clickable": false,
+      "components": [
+        {
+          "type": "text_label",
+          "font_id": "pacman-pixel",
+          "text": "00",
+          "wrap_length": 600,
+          "position": {
+            "x": 200,
+            "y": 20
+          },
+          "color": {
+            "r": 255,
+            "g": 255,
+            "b": 255
+          }
+        }
+      ]
+    },
+    {
+      "id": "player_one_display_label",
+      "layer": 5,
+      "is_clickable": false,
+      "components": [
+        {
+          "type": "text_label",
+          "font_id": "pacman-pixel",
+          "text": "PLAYER ONE",
+          "wrap_length": 600,
+          "position": {
+            "x": 148,
+            "y": 218
+          },
+          "color": {
+            "r": 0,
+            "g": 255,
+            "b": 255
+          }
+        }
+      ]
+    },
+    {
+      "id": "game_status_label",
+      "layer": 5,
+      "is_clickable": false,
+      "components": [
+        {
+          "type": "text_label",
+          "font_id": "pacman-pixel",
+          "text": "READY!",
+          "wrap_length": 600,
+          "position": {
+            "x": 180,
+            "y": 318
+          },
+          "color": {
+            "r": 255,
+            "g": 255,
+            "b": 0
+          }
+        }
+      ]
+    },
+    {
+      "id": "level",
+      "layer": 1,
+      "is_clickable": false,
+      "components": [
+        {
+          "type": "transform",
+          "camera_focused": false,
+          "position": {
+            "x": 0,
+            "y": 0
+          },
+          "velocity": {
+            "x": 0,
+            "y": 0
+          },
+          "width": 228,
+          "height": 248,
+          "scale": 1,
+          "rotation": 0
+        },
+        {
+          "type": "sprite",
+          "texture_id": "level",
+          "animated": true
+        }
+      ]
+    },
+    {
+      "id": "pacman",
+      "layer": 3,
+      "is_clickable": false,
+      "components": [
+        {
+          "type": "transform",
+          "camera_focused": false,
+          "position": {
+            "x": 208,
+            "y": 360
+          },
+          "velocity": {
+            "x": 0,
+            "y": 0
+          },
+          "width": 16,
+          "height": 16,
+          "scale": 1,
+          "rotation": 0
+        },
+        {
+          "type": "sprite",
+          "texture_id": "pacman",
+          "animated": true
+        },
+        {
+          "type": "collider",
+          "collider_tag": "player",
+          "offset": {
+            "x": 8,
+            "y": 8
+          },
+          "size": {
+            "width": 2,
+            "height": 2
+          }
+        },
+        {
+          "type": "script_class",
+          "module": "sample_projects.pacman.scripts.pacman",
+          "class": "Pacman"
+        }
+      ]
+    },
+    {
+      "id": "blinky",
+      "layer": 4,
+      "is_clickable": false,
+      "components": [
+        {
+          "type": "transform",
+          "camera_focused": false,
+          "position": {
+            "x": 210,
+            "y": 170
+          },
+          "velocity": {
+            "x": 0,
+            "y": 0
+          },
+          "width": 16,
+          "height": 16,
+          "scale": 1,
+          "rotation": 0
+        },
+        {
+          "type": "sprite",
+          "texture_id": "blinky",
+          "animated": true
+        },
+        {
+          "type": "collider",
+          "collider_tag": "enemy",
+          "offset": {
+            "x": 8,
+            "y": 8
+          },
+          "size": {
+            "width": 1,
+            "height": 1
+          }
+        },
+        {
+          "type": "script_class",
+          "module": "sample_projects.pacman.scripts.blinky",
+          "class": "Blinky"
+        }
+      ]
+    },
+    {
+      "id": "pinky",
+      "layer": 4,
+      "is_clickable": false,
+      "components": [
+        {
+          "type": "transform",
+          "camera_focused": false,
+          "position": {
+            "x": 210,
+            "y": 170
+          },
+          "velocity": {
+            "x": 0,
+            "y": 0
+          },
+          "width": 16,
+          "height": 16,
+          "scale": 1,
+          "rotation": 0
+        },
+        {
+          "type": "sprite",
+          "texture_id": "pinky",
+          "animated": true
+        },
+        {
+          "type": "collider",
+          "collider_tag": "enemy",
+          "offset": {
+            "x": 8,
+            "y": 8
+          },
+          "size": {
+            "width": 1,
+            "height": 1
+          }
+        },
+        {
+          "type": "script_class",
+          "module": "sample_projects.pacman.scripts.pinky",
+          "class": "Pinky"
+        }
+      ]
+    },
+    {
+      "id": "inky",
+      "layer": 4,
+      "is_clickable": false,
+      "components": [
+        {
+          "type": "transform",
+          "camera_focused": false,
+          "position": {
+            "x": 210,
+            "y": 170
+          },
+          "velocity": {
+            "x": 0,
+            "y": 0
+          },
+          "width": 16,
+          "height": 16,
+          "scale": 1,
+          "rotation": 0
+        },
+        {
+          "type": "sprite",
+          "texture_id": "inky",
+          "animated": true
+        },
+        {
+          "type": "collider",
+          "collider_tag": "enemy",
+          "offset": {
+            "x": 8,
+            "y": 8
+          },
+          "size": {
+            "width": 1,
+            "height": 1
+          }
+        },
+        {
+          "type": "script_class",
+          "module": "sample_projects.pacman.scripts.inky",
+          "class": "Inky"
+        }
+      ]
+    },
+    {
+      "id": "clyde",
+      "layer": 4,
+      "is_clickable": false,
+      "components": [
+        {
+          "type": "transform",
+          "camera_focused": false,
+          "position": {
+            "x": 210,
+            "y": 170
+          },
+          "velocity": {
+            "x": 0,
+            "y": 0
+          },
+          "width": 16,
+          "height": 16,
+          "scale": 1,
+          "rotation": 0
+        },
+        {
+          "type": "sprite",
+          "texture_id": "clyde",
+          "animated": true
+        },
+        {
+          "type": "collider",
+          "collider_tag": "enemy",
+          "offset": {
+            "x": 8,
+            "y": 8
+          },
+          "size": {
+            "width": 1,
+            "height": 1
+          }
+        },
+        {
+          "type": "script_class",
+          "module": "sample_projects.pacman.scripts.clyde",
+          "class": "Clyde"
+        }
+      ]
+    }
+  ]
+}

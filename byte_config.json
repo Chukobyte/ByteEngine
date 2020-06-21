@@ -1,0 +1,779 @@
+{
+	"game_title": "Byte Engine",
+	"window": {
+		"width": 448,
+		"height": 576
+	},
+	"camera": {
+		"zoom": {
+			"x": 2.0,
+			"y": 2.0
+		}
+	},
+	"default_script_class": {
+		"module": "sample_projects.pacman.scripts.script_class",
+		"class": "ScriptClass"
+	},
+	"initial_scene": "./sample_projects/pacman/scenes/init.json",
+	"background_color": {
+		"r": 0,
+		"g": 0,
+		"b": 0
+	},
+	"assets": [
+		{
+			"type": "texture",
+			"id": "byte-splash-logo",
+			"file": "./assets/byte_splash_logo.png"
+		},
+		{
+			"type": "texture",
+			"id": "level",
+			"file": "./sample_projects/pacman/assets/images/level.png"
+		},
+		{
+			"type": "texture",
+			"id": "pacman",
+			"file": "./sample_projects/pacman/assets/images/pacman.png"
+		},
+		{
+			"type": "texture",
+			"id": "blinky",
+			"file": "./sample_projects/pacman/assets/images/blinky.png"
+		},
+		{
+			"type": "texture",
+			"id": "pinky",
+			"file": "./sample_projects/pacman/assets/images/pinky.png"
+		},
+		{
+			"type": "texture",
+			"id": "inky",
+			"file": "./sample_projects/pacman/assets/images/inky.png"
+		},
+		{
+			"type": "texture",
+			"id": "clyde",
+			"file": "./sample_projects/pacman/assets/images/clyde.png"
+		},
+		{
+			"type": "texture",
+			"id": "pellete",
+			"file": "./sample_projects/pacman/assets/images/pellete.png"
+		},
+		{
+			"type": "texture",
+			"id": "power_pellete",
+			"file": "./sample_projects/pacman/assets/images/power_pellete.png"
+		},
+		{
+			"type": "texture",
+			"id": "pacman-life",
+			"file": "./sample_projects/pacman/assets/images/pacman_life.png"
+		},
+		{
+			"type": "texture",
+			"id": "cherry",
+			"file": "./sample_projects/pacman/assets/images/fruit/cherry.png"
+		},
+		{
+			"type": "texture",
+			"id": "strawberry",
+			"file": "./sample_projects/pacman/assets/images/fruit/strawberry.png"
+		},
+		{
+			"type": "texture",
+			"id": "orange",
+			"file": "./sample_projects/pacman/assets/images/fruit/orange.png"
+		},
+		{
+			"type": "texture",
+			"id": "apple",
+			"file": "./sample_projects/pacman/assets/images/fruit/apple.png"
+		},
+		{
+			"type": "texture",
+			"id": "melon",
+			"file": "./sample_projects/pacman/assets/images/fruit/melon.png"
+		},
+		{
+			"type": "texture",
+			"id": "galaxy_boss",
+			"file": "./sample_projects/pacman/assets/images/fruit/galaxy_boss.png"
+		},
+		{
+			"type": "texture",
+			"id": "bell",
+			"file": "./sample_projects/pacman/assets/images/fruit/bell.png"
+		},
+		{
+			"type": "texture",
+			"id": "key",
+			"file": "./sample_projects/pacman/assets/images/fruit/key.png"
+		},
+		{
+			"type": "texture",
+			"id": "pacman-logo",
+			"file": "./sample_projects/pacman/assets/images/logo.png"
+		},
+		{
+			"type": "sound_effect",
+			"id": "pacman-begin",
+			"file": "./sample_projects/pacman/assets/audio/sound_effects/pacman_beginning.wav"
+		},
+		{
+			"type": "sound_effect",
+			"id": "pacman-chomp",
+			"file": "./sample_projects/pacman/assets/audio/sound_effects/pacman_chomp.wav"
+		},
+		{
+			"type": "sound_effect",
+			"id": "pacman-death",
+			"file": "./sample_projects/pacman/assets/audio/sound_effects/pacman_death.wav"
+		},
+		{
+			"type": "sound_effect",
+			"id": "pacman-eat-ghost",
+			"file": "./sample_projects/pacman/assets/audio/sound_effects/pacman_eatghost.wav"
+		},
+		{
+			"type": "sound_effect",
+			"id": "pacman-eat-fruit",
+			"file": "./sample_projects/pacman/assets/audio/sound_effects/pacman_eatfruit.wav"
+		},
+		{
+			"type": "sound_effect",
+			"id": "pacman-extra-life",
+			"file": "./sample_projects/pacman/assets/audio/sound_effects/pacman_extrapac.wav"
+		},
+		{
+			"type": "music",
+			"id": "siren1",
+			"file": "./sample_projects/pacman/assets/audio/sound_effects/siren_1.wav"
+		},
+		{
+			"type": "music",
+			"id": "power-pellete",
+			"file": "./sample_projects/pacman/assets/audio/sound_effects/power_pellet.wav"
+		},
+		{
+			"type": "font",
+			"id": "pacman-pixel",
+			"file": "./sample_projects/pacman/assets/fonts/emulogic.ttf",
+			"font_size": 16
+		}
+	],
+	"animation_frames": [
+		{
+			"name": "level-animation",
+			"texture_id": "level",
+			"animations": [
+				{
+					"name": "playing",
+					"index": 0,
+					"frames": 1,
+					"speed": 0
+				},
+				{
+					"name": "level_completed",
+					"index": 1,
+					"frames": 2,
+					"speed": 200
+				}
+			]
+		},
+		{
+			"name": "pacman-animation",
+			"texture_id": "pacman",
+			"animations": [
+				{
+					"name": "idle",
+					"index": 0,
+					"frames": 1,
+					"speed": 0
+				},
+				{
+					"name": "right",
+					"index": 1,
+					"frames": 2,
+					"speed": 90
+				},
+				{
+					"name": "left",
+					"index": 2,
+					"frames": 2,
+					"speed": 90
+				},
+				{
+					"name": "up",
+					"index": 3,
+					"frames": 2,
+					"speed": 90
+				},
+				{
+					"name": "down",
+					"index": 4,
+					"frames": 2,
+					"speed": 90
+				},
+				{
+					"name": "lose_life",
+					"index": 5,
+					"frames": 12,
+					"speed": 220
+				}
+			]
+		},
+		{
+			"name": "blinky-animation",
+			"texture_id": "blinky",
+			"animations": [
+				{
+					"name": "right",
+					"index": 0,
+					"frames": 2,
+					"speed": 90
+				},
+				{
+					"name": "left",
+					"index": 1,
+					"frames": 2,
+					"speed": 90
+				},
+				{
+					"name": "up",
+					"index": 2,
+					"frames": 2,
+					"speed": 90
+				},
+				{
+					"name": "down",
+					"index": 3,
+					"frames": 2,
+					"speed": 90
+				},
+				{
+					"name": "frightened",
+					"index": 4,
+					"frames": 2,
+					"speed": 90
+				},
+				{
+					"name": "frightened_flash",
+					"index": 5,
+					"frames": 4,
+					"speed": 90
+				},
+				{
+					"name": "blank_right",
+					"index": 6,
+					"frames": 1,
+					"speed": 0
+				},
+				{
+					"name": "blank_left",
+					"index": 7,
+					"frames": 1,
+					"speed": 0
+				},
+				{
+					"name": "blank_up",
+					"index": 8,
+					"frames": 1,
+					"speed": 0
+				},
+				{
+					"name": "blank_down",
+					"index": 9,
+					"frames": 1,
+					"speed": 0
+				},
+				{
+					"name": "score_gain_200",
+					"index": 10,
+					"frames": 1,
+					"speed": 0
+				},
+				{
+					"name": "score_gain_400",
+					"index": 11,
+					"frames": 1,
+					"speed": 0
+				},
+				{
+					"name": "score_gain_800",
+					"index": 12,
+					"frames": 1,
+					"speed": 0
+				},
+				{
+					"name": "score_gain_1600",
+					"index": 13,
+					"frames": 1,
+					"speed": 0
+				}
+			]
+		},
+		{
+			"name": "pinky-animation",
+			"texture_id": "pinky",
+			"animations": [
+				{
+					"name": "right",
+					"index": 0,
+					"frames": 2,
+					"speed": 90
+				},
+				{
+					"name": "left",
+					"index": 1,
+					"frames": 2,
+					"speed": 90
+				},
+				{
+					"name": "up",
+					"index": 2,
+					"frames": 2,
+					"speed": 90
+				},
+				{
+					"name": "down",
+					"index": 3,
+					"frames": 2,
+					"speed": 90
+				},
+				{
+					"name": "frightened",
+					"index": 4,
+					"frames": 2,
+					"speed": 90
+				},
+				{
+					"name": "frightened_flash",
+					"index": 5,
+					"frames": 4,
+					"speed": 90
+				},
+				{
+					"name": "blank_right",
+					"index": 6,
+					"frames": 1,
+					"speed": 0
+				},
+				{
+					"name": "blank_left",
+					"index": 7,
+					"frames": 1,
+					"speed": 0
+				},
+				{
+					"name": "blank_up",
+					"index": 8,
+					"frames": 1,
+					"speed": 0
+				},
+				{
+					"name": "blank_down",
+					"index": 9,
+					"frames": 1,
+					"speed": 0
+				},
+				{
+					"name": "score_gain_200",
+					"index": 10,
+					"frames": 1,
+					"speed": 0
+				},
+				{
+					"name": "score_gain_400",
+					"index": 11,
+					"frames": 1,
+					"speed": 0
+				},
+				{
+					"name": "score_gain_800",
+					"index": 12,
+					"frames": 1,
+					"speed": 0
+				},
+				{
+					"name": "score_gain_1600",
+					"index": 13,
+					"frames": 1,
+					"speed": 0
+				}
+			]
+		},
+		{
+			"name": "inky-animation",
+			"texture_id": "inky",
+			"animations": [
+				{
+					"name": "right",
+					"index": 0,
+					"frames": 2,
+					"speed": 90
+				},
+				{
+					"name": "left",
+					"index": 1,
+					"frames": 2,
+					"speed": 90
+				},
+				{
+					"name": "up",
+					"index": 2,
+					"frames": 2,
+					"speed": 90
+				},
+				{
+					"name": "down",
+					"index": 3,
+					"frames": 2,
+					"speed": 90
+				},
+				{
+					"name": "frightened",
+					"index": 4,
+					"frames": 2,
+					"speed": 90
+				},
+				{
+					"name": "frightened_flash",
+					"index": 5,
+					"frames": 4,
+					"speed": 90
+				},
+				{
+					"name": "blank_right",
+					"index": 6,
+					"frames": 1,
+					"speed": 0
+				},
+				{
+					"name": "blank_left",
+					"index": 7,
+					"frames": 1,
+					"speed": 0
+				},
+				{
+					"name": "blank_up",
+					"index": 8,
+					"frames": 1,
+					"speed": 0
+				},
+				{
+					"name": "blank_down",
+					"index": 9,
+					"frames": 1,
+					"speed": 0
+				},
+				{
+					"name": "score_gain_200",
+					"index": 10,
+					"frames": 1,
+					"speed": 0
+				},
+				{
+					"name": "score_gain_400",
+					"index": 11,
+					"frames": 1,
+					"speed": 0
+				},
+				{
+					"name": "score_gain_800",
+					"index": 12,
+					"frames": 1,
+					"speed": 0
+				},
+				{
+					"name": "score_gain_1600",
+					"index": 13,
+					"frames": 1,
+					"speed": 0
+				}
+			]
+		},
+		{
+			"name": "clyde-animation",
+			"texture_id": "clyde",
+			"animations": [
+				{
+					"name": "right",
+					"index": 0,
+					"frames": 2,
+					"speed": 90
+				},
+				{
+					"name": "left",
+					"index": 1,
+					"frames": 2,
+					"speed": 90
+				},
+				{
+					"name": "up",
+					"index": 2,
+					"frames": 2,
+					"speed": 90
+				},
+				{
+					"name": "down",
+					"index": 3,
+					"frames": 2,
+					"speed": 90
+				},
+				{
+					"name": "frightened",
+					"index": 4,
+					"frames": 2,
+					"speed": 90
+				},
+				{
+					"name": "frightened_flash",
+					"index": 5,
+					"frames": 4,
+					"speed": 90
+				},
+				{
+					"name": "blank_right",
+					"index": 6,
+					"frames": 1,
+					"speed": 0
+				},
+				{
+					"name": "blank_left",
+					"index": 7,
+					"frames": 1,
+					"speed": 0
+				},
+				{
+					"name": "blank_up",
+					"index": 8,
+					"frames": 1,
+					"speed": 0
+				},
+				{
+					"name": "blank_down",
+					"index": 9,
+					"frames": 1,
+					"speed": 0
+				},
+				{
+					"name": "score_gain_200",
+					"index": 10,
+					"frames": 1,
+					"speed": 0
+				},
+				{
+					"name": "score_gain_400",
+					"index": 11,
+					"frames": 1,
+					"speed": 0
+				},
+				{
+					"name": "score_gain_800",
+					"index": 12,
+					"frames": 1,
+					"speed": 0
+				},
+				{
+					"name": "score_gain_1600",
+					"index": 13,
+					"frames": 1,
+					"speed": 0
+				}
+			]
+		},
+		{
+			"name": "cherry-animation",
+			"texture_id": "cherry",
+			"animations": [
+				{
+					"name": "normal",
+					"index": 0,
+					"frames": 1,
+					"speed": 0
+				},
+				{
+					"name": "score",
+					"index": 1,
+					"frames": 1,
+					"speed": 0
+				}
+			]
+		},
+		{
+			"name": "strawberry-animation",
+			"texture_id": "strawberry",
+			"animations": [
+				{
+					"name": "normal",
+					"index": 0,
+					"frames": 1,
+					"speed": 0
+				},
+				{
+					"name": "score",
+					"index": 1,
+					"frames": 1,
+					"speed": 0
+				}
+			]
+		},
+		{
+			"name": "orange-animation",
+			"texture_id": "orange",
+			"animations": [
+				{
+					"name": "normal",
+					"index": 0,
+					"frames": 1,
+					"speed": 0
+				},
+				{
+					"name": "score",
+					"index": 1,
+					"frames": 1,
+					"speed": 0
+				}
+			]
+		},
+		{
+			"name": "apple-animation",
+			"texture_id": "apple",
+			"animations": [
+				{
+					"name": "normal",
+					"index": 0,
+					"frames": 1,
+					"speed": 0
+				},
+				{
+					"name": "score",
+					"index": 1,
+					"frames": 1,
+					"speed": 0
+				}
+			]
+		},
+		{
+			"name": "melon-animation",
+			"texture_id": "melon",
+			"animations": [
+				{
+					"name": "normal",
+					"index": 0,
+					"frames": 1,
+					"speed": 0
+				},
+				{
+					"name": "score",
+					"index": 1,
+					"frames": 1,
+					"speed": 0
+				}
+			]
+		},
+		{
+			"name": "galaxy-boss-animation",
+			"texture_id": "galaxy_boss",
+			"animations": [
+				{
+					"name": "normal",
+					"index": 0,
+					"frames": 1,
+					"speed": 0
+				},
+				{
+					"name": "score",
+					"index": 1,
+					"frames": 1,
+					"speed": 0
+				}
+			]
+		},
+		{
+			"name": "bell-animation",
+			"texture_id": "bell",
+			"animations": [
+				{
+					"name": "normal",
+					"index": 0,
+					"frames": 1,
+					"speed": 0
+				},
+				{
+					"name": "score",
+					"index": 1,
+					"frames": 1,
+					"speed": 0
+				}
+			]
+		},
+		{
+			"name": "key-animation",
+			"texture_id": "key",
+			"animations": [
+				{
+					"name": "normal",
+					"index": 0,
+					"frames": 1,
+					"speed": 0
+				},
+				{
+					"name": "score",
+					"index": 1,
+					"frames": 1,
+					"speed": 0
+				}
+			]
+		}
+	],
+	"inputs": [
+		{
+			"type": "keyboard",
+			"actions": [
+				{
+					"name": "confirm",
+					"input_values": [
+						"space"
+					]
+				},
+				{
+					"name": "left",
+					"input_values": [
+						"left",
+						"a"
+					]
+				},
+				{
+					"name": "right",
+					"input_values": [
+						"right",
+						"d"
+					]
+				},
+				{
+					"name": "up",
+					"input_values": [
+						"up",
+						"w"
+					]
+				},
+				{
+					"name": "down",
+					"input_values": [
+						"down",
+						"s"
+					]
+				},
+				{
+					"name": "exit_game",
+					"input_values": [
+						"esc"
+					]
+				}
+			]
+		}
+	]
+}

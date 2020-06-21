@@ -1,0 +1,12 @@
+{
+  "id": "Init",
+  "layer": 0,
+  "components": [
+    {
+      "type": "script_class",
+      "module": "sample_projects.pacman.scripts.init",
+      "class": "Init"
+    }
+  ],
+  "entities": []
+}
