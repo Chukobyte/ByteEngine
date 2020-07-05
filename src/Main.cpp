@@ -1,17 +1,17 @@
 #include "./core/Game.h"
 
 int main(int argv, char** args) {
-	Game* game = new Game();
+    Game* game = new Game();
 
-	game->Initialize();
+    game->Initialize();
 
-	while(game->IsRunning()) {
-		game->ProcessInput();
-		game->Update();
-		game->Render();
-	}
+    while(game->IsRunning()) {
+        game->ProcessInput();
+        game->Update();
+        game->Render();
+    }
 
-	game->Destroy();
+    game->Destroy();
 
-	return 0;
+    return 0;
 }

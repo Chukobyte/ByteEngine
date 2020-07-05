@@ -11,28 +11,28 @@
 class ColliderComponent;
 
 class SceneManager {
-	private:
-		EntityManager* entityManager;
-		Scene currentScene;
-		std::map<std::string, ColliderComponent*> entityColliders;
+  private:
+    EntityManager* entityManager;
+    Scene currentScene;
+    std::map<std::string, ColliderComponent*> entityColliders;
 
-	public:
-		SceneManager();
+  public:
+    SceneManager();
 
-		SceneManager(EntityManager* entityManager);
+    SceneManager(EntityManager* entityManager);
 
-		~SceneManager();
+    ~SceneManager();
 
-		void InitializeScene(Scene newScene);
+    void InitializeScene(Scene newScene);
 
-		void CleanUpScene();
+    void CleanUpScene();
 
-		void AddEntity(Entity* entity);
+    void AddEntity(Entity* entity);
 
-		void RemoveEntity(std::string entityId);
+    void RemoveEntity(std::string entityId);
 
-		// Returns first collision
-		std::tuple<std::string, std::string> CheckEntityCollisionWithCollider(std::string sourceEntityId, glm::vec2 offset);
+    // Returns first collision
+    std::tuple<std::string, std::string> CheckEntityCollisionWithCollider(std::string sourceEntityId, glm::vec2 offset);
 };
 
 #endif

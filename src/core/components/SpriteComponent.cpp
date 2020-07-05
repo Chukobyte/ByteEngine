@@ -75,7 +75,7 @@ void SpriteComponent::Update(float deltaTime) {
 }
 
 void SpriteComponent::Render() {
-    TextureHandler::Draw(texture, sourceRectangle, destinationRectangle, spriteFlip);
+    TextureHandler::Draw(texture, sourceRectangle, destinationRectangle);
 }
 
 void SpriteComponent::SetParentTransform(TransformComponent* newTransform) {
