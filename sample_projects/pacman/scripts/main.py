@@ -181,6 +181,7 @@ class Main(ScriptClass):
             game.start_timer(timer_id=self.start_timer_id, time=4.2)
             game.start_timer(timer_id=self.show_entities_timer_id, time=2.0)
             game.play_sound(sound_id="pacman-begin")
+            global_obj.player_stats.level = 1
             global_obj.player_stats.pelletes = 0
         elif global_obj.game_state == GameState.LEVEL_COMPLETE:
             global_obj.player_stats.level += 1

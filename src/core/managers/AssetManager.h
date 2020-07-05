@@ -6,17 +6,19 @@
 #include <vector>
 #include <SDL2/SDL.h>
 #include <SDL2/SDL_mixer.h>
-#include <SDL2/SDL_image.h>
-#include <SDL2/SDL_ttf.h>
 
 #include "../Config.h"
+#include "../rendering/Texture.h"
+#include "../rendering/Font.h"
+#include "../rendering/Shader.h"
 
 class AssetManager {
   private:
-    std::map<std::string, SDL_Texture*> textures;
-    std::map<std::string, TTF_Font*> fonts;
+    std::map<std::string, Texture2D*> textures;
+    std::map<std::string, Font*> fonts;
     std::map<std::string, Mix_Music*> music;
     std::map<std::string, Mix_Chunk*> soundEffects;
+    std::map<std::string, Shader*> shaders;
   public:
     AssetManager();
     ~AssetManager();
@@ -25,10 +27,12 @@ class AssetManager {
     void AddFont(std::string fontId, const char* filePath, int fontSize);
     void AddMusic(std::string musicId, const char* filePath);
     void AddSoundEffect(std::string soundEffectId, const char* filePath);
-    TTF_Font* GetFont(std::string fontId);
-    SDL_Texture* GetTexture(std::string textureId);
+    void AddShader(std::string shaderId, const char* vertexPath, const char* fragmentPath);
+    Texture2D* GetTexture(std::string textureId);
+    Font* GetFont(std::string fontId);
     Mix_Music* GetMusic(std::string musicId);
     Mix_Chunk* GetSoundEffect(std::string soundEffectId);
+    Shader* GetShader(std::string shaderId);
     std::map<std::string, Mix_Chunk*> GetAllSoundEffects();
     bool HasMusic(std::string musicId);
     bool HasSoundEffect(std::string soundEffectId);

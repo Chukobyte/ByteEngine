@@ -2,7 +2,7 @@
 #include "../Game.h"
 #include "../handlers/FontHandler.h"
 
-TextLabelComponent::TextLabelComponent(std::string text, std::string fontFamily, const SDL_Color& color, bool isFixed, Uint32 wrapLength) {
+TextLabelComponent::TextLabelComponent(std::string text, std::string fontFamily, glm::vec3 color, bool isFixed, Uint32 wrapLength) {
     this->text = text;
     this->fontFamily = fontFamily;
     this->color = color;
@@ -15,9 +15,10 @@ void TextLabelComponent::Initialize() {
     transform = owner->GetComponent<TransformComponent>();
     position.x = transform->position.x;
     position.y = transform->position.y;
+    font = Game::assetManager->GetFont(fontFamily);
 }
 
-void TextLabelComponent::Update(float deltaTime)  {
+void TextLabelComponent::Update(float deltaTime) {
     if(!isFixed) {
         position.x = static_cast<int>(parentTransform == NULL ? transform->position.x : parentTransform->position.x) - Game::camera.viewport.x + owner->parentOffset.x;
         position.y = static_cast<int>(parentTransform == NULL ? transform->position.y : parentTransform->position.y) - Game::camera.viewport.y + owner->parentOffset.y;
@@ -29,17 +30,12 @@ void TextLabelComponent::SetLabelText(std::string text) {
 }
 
 void TextLabelComponent::SetLabelText(std::string text, std::string fontFamily) {
-    if(texture != NULL) {
-        SDL_DestroyTexture(texture);
-    }
-    SDL_Surface* surface = TTF_RenderText_Blended_Wrapped(Game::assetManager->GetFont(fontFamily), text.c_str(), color, wrapLength);
-    texture = SDL_CreateTextureFromSurface(Game::renderer, surface);
-    SDL_FreeSurface(surface);
-    SDL_QueryTexture(texture, NULL, NULL, &position.w, &position.h);
+    this->text = text;
 }
 
 void TextLabelComponent::Render() {
-    FontHandler::Draw(texture, position);
+    //FontHandler::Draw(texture, position);
+    FontHandler::Draw(font, text, position.x, position.y, 1.0f, color);
 }
 
 void TextLabelComponent::UpdateTransform(TransformComponent* newTransform) {

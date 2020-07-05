@@ -11,6 +11,7 @@ void AssetManager::ClearData() {
     fonts.clear();
     music.clear();
     soundEffects.clear();
+    shaders.clear();
 }
 
 void AssetManager::AddTexture(std::string textureId, const char* filePath) {
@@ -29,11 +30,15 @@ void AssetManager::AddSoundEffect(std::string soundEffectId, const char* filePat
     soundEffects.emplace(soundEffectId, AudioHandler::LoadSoundEffect(soundEffectId, filePath));
 }
 
-SDL_Texture* AssetManager::GetTexture(std::string textureId) {
+void AssetManager::AddShader(std::string shaderId, const char* vertexPath, const char* fragmentPath) {
+    shaders.emplace(shaderId, new Shader(vertexPath, fragmentPath));
+}
+
+Texture2D* AssetManager::GetTexture(std::string textureId) {
     return textures[textureId];
 }
 
-TTF_Font* AssetManager::GetFont(std::string fontId) {
+Font* AssetManager::GetFont(std::string fontId) {
     return fonts[fontId];
 }
 
@@ -43,6 +48,10 @@ Mix_Music* AssetManager::GetMusic(std::string musicId) {
 
 Mix_Chunk* AssetManager::GetSoundEffect(std::string soundEffectId) {
     return soundEffects[soundEffectId];
+}
+
+Shader* AssetManager::GetShader(std::string shaderId) {
+    return shaders[shaderId];
 }
 
 std::map<std::string, Mix_Chunk*> AssetManager::GetAllSoundEffects() {

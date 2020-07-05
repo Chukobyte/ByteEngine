@@ -1,13 +1,13 @@
 #ifndef FONTHANDLER_H
 #define FONTHANDLER_H
 
-#include <SDL2/SDL_ttf.h>
+#include "../rendering/Font.h"
 
 class FontHandler {
   public:
-    static TTF_Font* LoadFont(const char* fileName, int fontSize);
+    static Font* LoadFont(const char* fileName, int size);
 
-    static void Draw(SDL_Texture* texture, SDL_Rect position);
+    static void Draw(Font* font, std::string text, float x, float y, float scale, glm::vec3 color);
 };
 
 #endif

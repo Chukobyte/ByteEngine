@@ -11,14 +11,14 @@ class Animation {
     unsigned int animationSpeed;
     Animation() {}
     Animation(std::string name, unsigned int index, unsigned int numFrames, unsigned int animationSpeed) {
-    	this->name = name;
-    	this->index = index;
-    	this->numFrames = numFrames;
-    	if(animationSpeed <= 0) {
-	        animationSpeed = 1;
-	    }
-	    this->animationSpeed = animationSpeed;
-   }
+        this->name = name;
+        this->index = index;
+        this->numFrames = numFrames;
+        if(animationSpeed <= 0) {
+            animationSpeed = 1;
+        }
+        this->animationSpeed = animationSpeed;
+    }
 };
 
 #endif

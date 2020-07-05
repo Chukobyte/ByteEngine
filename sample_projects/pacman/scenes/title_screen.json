@@ -71,7 +71,7 @@
           "wrap_length": 600,
           "position": {
             "x": 50,
-            "y": 0
+            "y": 2
           },
           "color": {
             "r": 255,
@@ -93,7 +93,7 @@
           "wrap_length": 600,
           "position": {
             "x": 50,
-            "y": 20
+            "y": 22
           },
           "color": {
             "r": 255,
@@ -115,7 +115,7 @@
           "wrap_length": 600,
           "position": {
             "x": 150,
-            "y": 0
+            "y": 2
           },
           "color": {
             "r": 255,
@@ -137,7 +137,7 @@
           "wrap_length": 600,
           "position": {
             "x": 200,
-            "y": 20
+            "y": 22
           },
           "color": {
             "r": 255,

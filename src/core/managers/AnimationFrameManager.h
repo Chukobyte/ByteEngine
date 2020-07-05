@@ -8,24 +8,24 @@
 #include "../AnimationFrames.h"
 
 class AnimationFrameManager {
-	private:
-		std::map<std::string, AnimationFrames> animationFramesRepository;
-	public:
-		void AddAnimationFrames(std::string textureId, AnimationFrames animationFrames) {
-			animationFramesRepository.emplace(textureId, animationFrames);
-		}
+  private:
+    std::map<std::string, AnimationFrames> animationFramesRepository;
+  public:
+    void AddAnimationFrames(std::string textureId, AnimationFrames animationFrames) {
+        animationFramesRepository.emplace(textureId, animationFrames);
+    }
 
-    	bool HasAnimationFrames(std::string textureId) {
-    		return animationFramesRepository.count(textureId) > 0;
-    	}
+    bool HasAnimationFrames(std::string textureId) {
+        return animationFramesRepository.count(textureId) > 0;
+    }
 
-    	AnimationFrames GetAnimationFrames(std::string textureId) {
-    		return animationFramesRepository[textureId];
-    	}
+    AnimationFrames GetAnimationFrames(std::string textureId) {
+        return animationFramesRepository[textureId];
+    }
 
-    	void SetAnimationFrames(std::map<std::string, AnimationFrames> animationFrames) {
-    		this->animationFramesRepository = animationFrames;
-    	}
+    void SetAnimationFrames(std::map<std::string, AnimationFrames> animationFrames) {
+        this->animationFramesRepository = animationFrames;
+    }
 };
 
 #endif

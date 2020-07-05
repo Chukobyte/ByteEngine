@@ -8,8 +8,6 @@ A simple 2D game engine made with C++ and SDL2.  Utilizes python 3 for scripting
 
 Dependencies:
 * SDL2
-* SDL2_image
-* SDL2_ttf
 * SDL2_mixer
 * Python 3.7
 

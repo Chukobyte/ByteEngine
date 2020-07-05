@@ -5,6 +5,7 @@
 #include <SDL2/SDL.h>
 #include <SDL2/SDL_ttf.h>
 
+#include "../rendering/Font.h"
 #include "./TransformComponent.h"
 
 class TextLabelComponent : public Component {
@@ -14,14 +15,14 @@ class TextLabelComponent : public Component {
     std::string text;
     std::string fontFamily;
     Uint32 wrapLength;
-    SDL_Color color;
+    glm::vec3 color;
     bool isFixed;
-    SDL_Texture* texture = NULL;
+    Font* font = NULL;
   public:
-    TransformComponent* transform;
+    TransformComponent* transform = NULL;
     TransformComponent* parentTransform = NULL;
 
-    TextLabelComponent(std::string text, std::string fontFamily, const SDL_Color& color, bool isFixed, Uint32 wrapLength);
+    TextLabelComponent(std::string text, std::string fontFamily, glm::vec3 color, bool isFixed, Uint32 wrapLength);
 
     void Initialize() override;
 

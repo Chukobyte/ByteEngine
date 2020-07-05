@@ -75,7 +75,7 @@ class Pacman(ScriptClass):
                     texture_id=fruit_entity_id,
                     position=(global_obj.level_grid.board_position.x + (13 * 16) + 4, global_obj.level_grid.board_position.y + (17 * 16) - 8),
                     layer=5,
-                    width=20,
+                    width=16,
                     height=16,
                     collider_tag="fruit",
                     script_class=("sample_projects.pacman.scripts.fruit", "Fruit")

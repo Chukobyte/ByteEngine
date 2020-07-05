@@ -77,7 +77,7 @@ bool Entity::RemoveChild(Entity* childEntity) {
 }
 
 void Entity::ListAllComponents() const {
-    
+
 }
 
 void Entity::SetVisibility(bool visible) {

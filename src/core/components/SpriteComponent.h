@@ -4,6 +4,7 @@
 #include <SDL2/SDL.h>
 
 #include "../models/Constants.h"
+#include "../rendering/Texture.h"
 #include "../handlers/TextureHandler.h"
 #include "../managers/AssetManager.h"
 #include "../AnimationFrames.h"
@@ -14,7 +15,7 @@ class SpriteComponent: public Component {
   private:
     TransformComponent* transform = NULL;
     TransformComponent* parentTransform = NULL;
-    SDL_Texture* texture;
+    Texture2D* texture;
     SDL_Rect sourceRectangle;
     SDL_Rect destinationRectangle;
     AnimationFrames animationFrames;

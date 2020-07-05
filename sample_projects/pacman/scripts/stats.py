@@ -123,7 +123,7 @@ class Stats:
                             global_obj.level_grid.board_position.y + 496,
                         ),
                         layer=5,
-                        width=20,
+                        width=16,
                         height=16,
                     )
 

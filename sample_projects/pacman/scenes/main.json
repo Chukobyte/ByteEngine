@@ -21,7 +21,7 @@
           "wrap_length": 600,
           "position": {
             "x": 50,
-            "y": 0
+            "y": 2
           },
           "color": {
             "r": 255,
@@ -43,7 +43,7 @@
           "wrap_length": 600,
           "position": {
             "x": 50,
-            "y": 20
+            "y": 22
           },
           "color": {
             "r": 255,
@@ -65,7 +65,7 @@
           "wrap_length": 600,
           "position": {
             "x": 150,
-            "y": 0
+            "y": 2
           },
           "color": {
             "r": 255,
@@ -87,7 +87,7 @@
           "wrap_length": 600,
           "position": {
             "x": 200,
-            "y": 20
+            "y": 22
           },
           "color": {
             "r": 255,
@@ -109,7 +109,7 @@
           "wrap_length": 600,
           "position": {
             "x": 148,
-            "y": 218
+            "y": 224
           },
           "color": {
             "r": 0,
@@ -131,7 +131,7 @@
           "wrap_length": 600,
           "position": {
             "x": 180,
-            "y": 318
+            "y": 322
           },
           "color": {
             "r": 255,

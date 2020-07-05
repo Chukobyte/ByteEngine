@@ -25,7 +25,7 @@ class AnimationFrames {
     AnimationFrames(std::string name, std::string textureId) {
         this->name = name;
         this->textureId = textureId;
-        this->activated = true;        
+        this->activated = true;
     }
 
     void AddAnimation(Animation animation) {
