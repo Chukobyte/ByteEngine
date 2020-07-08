@@ -47,16 +47,16 @@ SpriteRenderer::~SpriteRenderer() {
     glDeleteBuffers(1, &quadVBO);
 }
 
-void SpriteRenderer::Draw(Texture2D* texture, SDL_Rect sourceRectangle, SDL_Rect destinationRectangle, float rotation, glm::vec3 color) {
+void SpriteRenderer::Draw(Texture2D* texture, SDL_Rect* sourceRectangle, SDL_Rect* destinationRectangle, float rotation, glm::vec3 color) {
     glDepthMask(false);
     glm::mat4 model = glm::mat4(1.0f);
-    model = glm::translate(model, glm::vec3(destinationRectangle.x, destinationRectangle.y, 0.0f));  // first translate (transformations are: scale happens first, then rotation, and then final translation happens; reversed order)
+    model = glm::translate(model, glm::vec3(destinationRectangle->x, destinationRectangle->y, 0.0f));  // first translate (transformations are: scale happens first, then rotation, and then final translation happens; reversed order)
 
-    model = glm::translate(model, glm::vec3(0.5f * destinationRectangle.w, 0.5f * destinationRectangle.h, 0.0f)); // move origin of rotation to center of quad
+    model = glm::translate(model, glm::vec3(0.5f * destinationRectangle->w, 0.5f * destinationRectangle->h, 0.0f)); // move origin of rotation to center of quad
     model = glm::rotate(model, glm::radians(rotation), glm::vec3(0.0f, 0.0f, 1.0f)); // then rotate
-    model = glm::translate(model, glm::vec3(-0.5f * destinationRectangle.w, -0.5f * destinationRectangle.h, 0.0f)); // move origin back
+    model = glm::translate(model, glm::vec3(-0.5f * destinationRectangle->w, -0.5f * destinationRectangle->h, 0.0f)); // move origin back
 
-    model = glm::scale(model, glm::vec3(destinationRectangle.w, destinationRectangle.h, 1.0f)); // last scale
+    model = glm::scale(model, glm::vec3(destinationRectangle->w, destinationRectangle->h, 1.0f)); // last scale
 
     shader->Use();
     shader->SetMatrix4Float("model", model);
@@ -68,10 +68,10 @@ void SpriteRenderer::Draw(Texture2D* texture, SDL_Rect sourceRectangle, SDL_Rect
 
     // render subimage based on source rectangle
     glPixelStorei(GL_UNPACK_ROW_LENGTH, texture->width);
-    glPixelStorei(GL_UNPACK_SKIP_PIXELS, sourceRectangle.x);
-    glPixelStorei(GL_UNPACK_SKIP_ROWS, sourceRectangle.y);
+    glPixelStorei(GL_UNPACK_SKIP_PIXELS, sourceRectangle->x);
+    glPixelStorei(GL_UNPACK_SKIP_ROWS, sourceRectangle->y);
 
-    glTexImage2D(GL_TEXTURE_2D, 0, GL_RGBA, sourceRectangle.w, sourceRectangle.h, 0, texture->imageFormat, GL_UNSIGNED_BYTE, texture->data);
+    glTexImage2D(GL_TEXTURE_2D, 0, GL_RGBA, sourceRectangle->w, sourceRectangle->h, 0, texture->imageFormat, GL_UNSIGNED_BYTE, texture->data);
 
     glPixelStorei(GL_UNPACK_ROW_LENGTH, 0 );
     glPixelStorei(GL_UNPACK_SKIP_PIXELS, 0 );

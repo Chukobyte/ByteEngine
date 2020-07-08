@@ -9,6 +9,6 @@ Texture2D* TextureHandler::LoadTexture(const char* fileName) {
     return texture;
 }
 
-void TextureHandler::Draw(Texture2D* texture, SDL_Rect sourceRectangle, SDL_Rect destinationRectangle) {
+void TextureHandler::Draw(Texture2D* texture, SDL_Rect* sourceRectangle, SDL_Rect* destinationRectangle) {
     Game::spriteRenderer->Draw(texture, sourceRectangle, destinationRectangle);
 }

@@ -21,7 +21,7 @@ class SpriteRenderer {
   public:
     SpriteRenderer(Shader* shader, ConfigManager* configManager);
     ~SpriteRenderer();
-    void Draw(Texture2D* texture, SDL_Rect sourceRectangle, SDL_Rect destinationRectangle, float rotation = 0.0f, glm::vec3 color = glm::vec3(1.0f));
+    void Draw(Texture2D* texture, SDL_Rect* sourceRectangle, SDL_Rect* destinationRectangle, float rotation = 0.0f, glm::vec3 color = glm::vec3(1.0f));
 };
 
 #endif
